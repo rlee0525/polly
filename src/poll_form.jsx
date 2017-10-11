@@ -6,16 +6,24 @@ class PollForm extends React.Component {
 
     this.state = {
       pollQuestion: "",
-      options: []
+      options: ["", "", "", ""]
     };
 
-    this.updateState = this.updateState.bind(this);
+    this.updateQuestion = this.updateQuestion.bind(this);
+    this.updateOptions = this.updateOptions.bind(this);
   }
 
-  updateState(e) {
+  updateQuestion(e) {
     this.setState({
       [e.target.id]: e.target.value
     });
+  }
+
+  updateOptions(idx, e) {
+    let options = this.state.options;
+    options[idx] = e.target.value;
+    this.setState({ options });
+    console.log(this.state);
   }
 
   render() {
@@ -30,7 +38,7 @@ class PollForm extends React.Component {
             autoFocus
             maxLength={140}
             value={this.state.pollQuestion}
-            onChange={this.updateState}
+            onChange={this.updateQuestion}
             className="poll-question"
             id="pollQuestion"
           >
@@ -39,16 +47,32 @@ class PollForm extends React.Component {
 
         <section className="options-container">
           <section className="option option-1">
-            <input className="option-input" placeholder="Option..." />
+            <input 
+              className="option-input" 
+              placeholder="Option..."
+              onChange={(e) => this.updateOptions(0, e)}
+            />
           </section>
           <section className="option option-2">
-            <input className="option-input" placeholder="Option..." />
+            <input
+              className="option-input"
+              placeholder="Option..."
+              onChange={(e) => this.updateOptions(1, e)}
+            />
           </section>
-          <section className="option option-3">
-            <input className="option-input" placeholder="Option..." />
+          <section className="option option-3 hidden">
+            <input
+              className="option-input"
+              placeholder="Option..."
+              onChange={(e) => this.updateOptions(2, e)}
+            />
           </section>
-          <section className="option option-4">
-            <input className="option-input" placeholder="Option..." />
+          <section className="option option-4 hidden">
+            <input
+              className="option-input"
+              placeholder="Option..."
+              onChange={(e) => this.updateOptions(3, e)}
+            />
           </section>
         </section>
 
