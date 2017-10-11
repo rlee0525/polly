@@ -35,7 +35,6 @@ class PollForm extends React.Component {
 
   checkValidPoll() {
     let pollQuestion = this.state.pollQuestion;
-    console.log(pollQuestion);
     let options = this.state.options;
     let button = document.getElementById("create-poll");
 
