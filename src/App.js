@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header';
 import PollForm from './poll_form';
+import Footer from './footer';
 import './App.css';
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="app">
         <Header />
         <PollForm />
+        <Footer />
       </div>
     );
   }

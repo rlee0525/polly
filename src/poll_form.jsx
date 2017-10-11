@@ -38,10 +38,16 @@ class PollForm extends React.Component {
         </section>
 
         <section className="options-container">
-          <section className="option">
+          <section className="option option-1">
             <input className="option-input" placeholder="Option..." />
           </section>
-          <section className="option">
+          <section className="option option-2">
+            <input className="option-input" placeholder="Option..." />
+          </section>
+          <section className="option option-3">
+            <input className="option-input" placeholder="Option..." />
+          </section>
+          <section className="option option-4">
             <input className="option-input" placeholder="Option..." />
           </section>
         </section>

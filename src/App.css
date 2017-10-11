@@ -114,3 +114,15 @@ textarea {
   border-radius: 5px;
   outline: none;
 }
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  font-size: 11px;
+  margin: 20px auto;
+}
+
+.links > a:hover {
+  text-decoration: underline;
+}
