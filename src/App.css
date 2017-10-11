@@ -119,10 +119,12 @@ textarea {
   border-radius: 5px;
   outline: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .submit-button:disabled {
   background: #CCD6DD;
+  cursor: auto;
 }
 
 .links {
