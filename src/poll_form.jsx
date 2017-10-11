@@ -11,6 +11,11 @@ class PollForm extends React.Component {
 
     this.updateQuestion = this.updateQuestion.bind(this);
     this.updateOptions = this.updateOptions.bind(this);
+    this.checkValidPoll = this.checkValidPoll.bind(this);
+  }
+
+  componentDidMount() {
+    this.checkValidPoll();
   }
 
   updateQuestion(e) {
@@ -23,7 +28,21 @@ class PollForm extends React.Component {
     let options = this.state.options;
     options[idx] = e.target.value;
     this.setState({ options });
-    console.log(this.state);
+  }
+
+  checkValidPoll() {
+    let pollQuestion = this.state.pollQuestion;
+    let options = this.state.options;
+    let button = document.getElementById("create-poll");
+
+    if (pollQuestion.length !== 0 && 
+        pollQuestion.length <= 140 &&
+        options[0].length !== 0 &&
+        options[1].length !== 0) {
+          button.disabled = false;
+        } else {
+          button.disabled = true;
+        }
   }
 
   render() {
@@ -76,7 +95,9 @@ class PollForm extends React.Component {
           </section>
         </section>
 
-        <button className="submit-button" disabled>Make My Polly</button>
+        <button className="submit-button" id="create-poll">
+          Make My Polly
+        </button>
       </div>
     );
   }
