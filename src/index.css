@@ -1,3 +1,8 @@
+#root {
+  background-color: #8E33F7;
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
