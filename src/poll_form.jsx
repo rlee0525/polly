@@ -8,6 +8,14 @@ class PollForm extends React.Component {
       pollQuestion: "",
       options: []
     };
+
+    this.updateState = this.updateState.bind(this);
+  }
+
+  updateState(e) {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
   }
 
   render() {
@@ -16,9 +24,29 @@ class PollForm extends React.Component {
         <section className="instructions">
           Make a Polly by typing a question or rolling the dice to create a random one.
         </section>
-        <section>
-          <textarea className="poll-question"></textarea>
+
+        <section className="question">
+          <textarea
+            autoFocus
+            maxLength={140}
+            value={this.state.pollQuestion}
+            onChange={this.updateState}
+            className="poll-question"
+            id="pollQuestion"
+          >
+          </textarea>
         </section>
+
+        <section className="options-container">
+          <section className="option">
+            <input className="option-input" placeholder="Option..." />
+          </section>
+          <section className="option">
+            <input className="option-input" placeholder="Option..." />
+          </section>
+        </section>
+
+        <button className="submit-button" disabled>Make My Polly</button>
       </div>
     );
   }
